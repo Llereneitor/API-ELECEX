@@ -1,0 +1,35 @@
+package com.sal.elecex.entity;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name = "proveedores")
+public class ProveedorEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String nombre;
+
+    private String direccion;
+
+    private String telefono;
+
+    private String email;
+
+    private LocalDateTime fechaCreacion;
+
+    @OneToMany(mappedBy = "proveedor")
+    private List<FacturaEntity> facturas;
+}
