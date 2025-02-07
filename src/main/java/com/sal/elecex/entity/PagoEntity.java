@@ -1,5 +1,7 @@
 package com.sal.elecex.entity;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
@@ -18,17 +20,13 @@ public class PagoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer pagoId;
 
-    @ManyToOne
-    @JoinColumn(name = "factura_id", nullable = false)
-    private FacturaEntity factura;
+    private LocalDate fechaPago;
 
-    private LocalDateTime fechaPago;
+    private BigDecimal monto;
 
-    private Double monto;
+    private String estadoPago;
 
-    private String metodoPago;
-
-    private String condicionPago;
+    private Integer facturaId;
 }

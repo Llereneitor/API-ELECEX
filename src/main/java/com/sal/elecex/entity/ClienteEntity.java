@@ -30,6 +30,4 @@ public class ClienteEntity {
 
     private LocalDateTime fechaCreacion;
 
-    @OneToMany(mappedBy = "cliente")
-    private List<FacturaEntity> facturas;
 }

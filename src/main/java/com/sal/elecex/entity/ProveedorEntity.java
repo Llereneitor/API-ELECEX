@@ -18,7 +18,7 @@ public class ProveedorEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     private String nombre;
 
@@ -30,6 +30,4 @@ public class ProveedorEntity {
 
     private LocalDateTime fechaCreacion;
 
-    @OneToMany(mappedBy = "proveedor")
-    private List<FacturaEntity> facturas;
 }

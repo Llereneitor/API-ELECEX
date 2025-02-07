@@ -20,25 +20,14 @@ import lombok.Data;
 public class FacturaEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
-    @ManyToOne
-    @JoinColumn(name = "cliente_id")
-    private ClienteEntity cliente;
-
-    @ManyToOne
-    @JoinColumn(name = "proveedor_id")
-    private ProveedorEntity proveedor;
-
-    private LocalDateTime fechaFactura;
-
-    private BigDecimal total;
-
+    private Integer facturaId;
+    private Integer clienteId;
+    private Integer proveedorId;
+    private LocalDateTime fechaCreacion;
+    private BigDecimal importeTotal;
     private String estado;
+    private String tipoPago;
+    private String tiempoEntrePlazos;
+    private Integer totalPlazosPago;
 
-    private String tipo;
-
-    @OneToMany(mappedBy = "factura")
-    private List<PagoEntity> pagos;
 }
